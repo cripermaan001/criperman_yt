@@ -65,16 +65,16 @@
     }
     window.addEventListener('resize', resize);
     resize();
-    const chars = '*';
+    const chars = '1234567890QWERTYUIOPASDFGHJKLZXCVBNM';
     function drawFrame(){
-      ctx.fillStyle = 'rgba(0,0,0,0.12)';
+      ctx.fillStyle = 'rgba(100,100,100,1)';
       ctx.fillRect(0,0,W,H);
       for(let i=0;i<columns;i++){
         if(Math.random() > 0.975) {
           drops[i] = Math.random()*-200;
         }
         const text = chars;
-        ctx.fillStyle = '#fff';
+        ctx.fillStyle = '#008000';
         ctx.fillText(text, i*fontSize, drops[i]);
         drops[i] += fontSize + Math.random()*fontSize*0.65;
         if(drops[i] > H + 100) drops[i] = Math.random()*-50;
